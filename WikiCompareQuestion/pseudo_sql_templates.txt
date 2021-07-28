@@ -1,0 +1,17 @@
+select column comparee $q from table name $t where $MORE row_a comparee $x row_b standard $y  parameter $p  comparee_column $c
+select column comparee $q from table name $t where $MORE row_a comparee $x row_b standard $p $value  parameter $p  comparee_column $c
+select column comparee $q from table name $t where $MORE row_b standard $y  parameter $p  comparee_column $c
+select column comparee $q from table name $t where $MORE row_a row_b standard $p $value  parameter $p  comparee_column $c
+select column comparee $q from table name $t where $EQUAL row_b standard $y  parameter $p  comparee_column $c
+select column comparee $q from table name $t where $EQUAL row_b standard $p $value  parameter $p  comparee_column $c
+select column comparee $q from table name $t where $LESS row_a comparee $x row_b standard $y  parameter $p  comparee_column $c
+select column comparee $q from table name $t where $LESS row_a comparee $x row_b standard $p $value  parameter $p  comparee_column $c
+select column comparee $q from table name $t where $LESS row_b standard $y  parameter $p  comparee_column $c
+select column comparee $q from table name $t where $LESS row_a row_b standard $p $value  parameter $p  comparee_column $c
+select DIFFERENCE $p $q from table name $t where $DIFFER row_a comparee $x row_b standard $y  parameter $p  comparee_column $c
+select index $i = $q from table name $t where $MORE row_a comparee $x row_b standard $y  parameter $p  comparee _column $c
+select index $i = $q from table name $t where $LESS row_a comparee $x row_b standard $y  parameter $p  comparee_column $c
+select index $i = $q from table name $t where $EQUAL row_a comparee $x row_b standard $y  parameter $p  comparee_column $c
+select index $i = $q from table name $t where $COMPARE row_a comparee $x row_b standard $y  parameter $p  comparee_column $c
+select column comparee $q from table name $t where $LEAST  parameter $p  comparee_column $c
+select column comparee $q from table name $t where $MOST  parameter $p  comparee_column $c
