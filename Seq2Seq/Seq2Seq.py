@@ -3,7 +3,7 @@ import random
 import torch
 import torch.nn as nn
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
 class Seq2Seq(nn.Module):
     """
     要点：
@@ -17,12 +17,13 @@ class Seq2Seq(nn.Module):
         self.enc = nn.RNN(input_size=input_vocab_size, hidden_size=n_hidden, dropout=0.5).to(device)
         self.dec = nn.RNN(input_size=output_vocab_size, hidden_size=n_hidden, dropout=0.5).to(device)
         self.fc = nn.Linear(n_hidden, output_vocab_size).to(device)
-        self.enc.cuda()
-        self.dec.cuda()
-        self.fc.cuda()
+        self.enc.to(device)
+        self.dec.to(device)
+        self.fc.to(device)
 
     def forward(self, enc_input, enc_hidden, dec_input):
         # RNN要求输入：(seq_len, batch_size, n_class)，这里需要转置一下
+        print(dec_input)
         enc_input = enc_input.transpose(0,1)
         dec_input = dec_input.transpose(0,1)
         _, enc_states = self.enc(enc_input, enc_hidden)
